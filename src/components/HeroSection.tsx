@@ -42,10 +42,10 @@ const HeroSection = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
-              variant="hero"
+              variant="default"
               size="xl"
               onClick={handleWhatsAppClick}
-              className="group text-center"
+              className="group text-center !bg-white !text-primary hover:!bg-white/90 shadow-lg font-semibold"
             >
               <Phone className="mr-2 h-5 w-5" />
               <span className="hidden sm:inline">Fale comigo e garanta sua preparação</span>
