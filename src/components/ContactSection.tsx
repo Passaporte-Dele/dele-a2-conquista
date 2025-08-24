@@ -1,43 +1,34 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { MessageCircle, Mail, Video, Phone, MapPin, Clock } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { MessageCircle, Phone, Send, User, Mail } from "lucide-react";
+import { useState } from "react";
 
 const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá Stephanie! Gostaria de começar minha preparação para o DELE A2 e conquistar minha nacionalidade espanhola. Quando podemos conversar?");
     window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
   };
 
-  const handleEmailClick = () => {
-    window.open('mailto:stephanie@deleA2.com?subject=Preparação DELE A2&body=Olá Stephanie! Gostaria de saber mais sobre a preparação para o DELE A2.', '_blank');
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const message = encodeURIComponent(`Olá Stephanie! Meu nome é ${formData.name}. Email: ${formData.email}. Mensagem: ${formData.message}`);
+    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
   };
 
-  const contactOptions = [
-    {
-      icon: MessageCircle,
-      title: "WhatsApp",
-      description: "Resposta rápida e atendimento personalizado",
-      action: "Falar no WhatsApp",
-      onClick: handleWhatsAppClick,
-      highlight: true
-    },
-    {
-      icon: Mail,
-      title: "E-mail",
-      description: "stephanie@deleA2.com",
-      action: "Enviar e-mail",
-      onClick: handleEmailClick,
-      highlight: false
-    },
-    {
-      icon: Video,
-      title: "Aulas Online",
-      description: "Zoom, Google Meet ou Skype",
-      action: "Saiba mais",
-      onClick: handleWhatsAppClick,
-      highlight: false
-    }
-  ];
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
 
   return (
     <section className="py-20 bg-primary/5">
@@ -58,92 +49,115 @@ const ContactSection = () => {
           </p>
         </div>
 
-        {/* Contact Options */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16 max-w-5xl mx-auto">
-          {contactOptions.map((option, index) => (
-            <Card 
-              key={index} 
-              className={`p-6 text-center spanish-hover cursor-pointer ${
-                option.highlight ? 'bg-gradient-hero text-white border-primary' : 'bg-card'
-              }`}
-              onClick={option.onClick}
-            >
-              <div className={`p-4 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center ${
-                option.highlight 
-                  ? 'bg-white/20' 
-                  : 'bg-primary/10'
-              }`}>
-                <option.icon className={`h-10 w-10 ${
-                  option.highlight ? 'text-white' : 'text-primary'
-                }`} />
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Contact Form */}
+          <Card className="p-8 bg-card/80 backdrop-blur">
+            <h3 className="text-2xl font-bold mb-6 text-primary flex items-center gap-2">
+              <Send className="h-6 w-6" />
+              Envie uma mensagem
+            </h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="space-y-2">
+                <label className="text-sm font-medium flex items-center gap-2">
+                  <User className="h-4 w-4" />
+                  Nome completo
+                </label>
+                <Input
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  placeholder="Digite seu nome completo"
+                  required
+                  className="w-full"
+                />
               </div>
-              <h3 className={`text-xl font-semibold mb-2 ${
-                option.highlight ? 'text-white' : 'text-foreground'
-              }`}>
-                {option.title}
-              </h3>
-              <p className={`mb-4 ${
-                option.highlight ? 'text-white/90' : 'text-muted-foreground'
-              }`}>
-                {option.description}
-              </p>
+
+              <div className="space-y-2">
+                <label className="text-sm font-medium flex items-center gap-2">
+                  <Mail className="h-4 w-4" />
+                  E-mail
+                </label>
+                <Input
+                  name="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="seu@email.com"
+                  required
+                  className="w-full"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-medium flex items-center gap-2">
+                  <MessageCircle className="h-4 w-4" />
+                  Mensagem
+                </label>
+                <Textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Conte-me sobre seus objetivos com o DELE A2, seu nível atual de espanhol e quando pretende fazer a prova..."
+                  rows={4}
+                  required
+                  className="w-full resize-none"
+                />
+              </div>
+
               <Button 
-                variant={option.highlight ? "gold" : "outline"}
-                size="sm"
-                className={option.highlight ? "" : "hover:bg-primary hover:text-primary-foreground"}
+                type="submit"
+                variant="spanish"
+                size="lg"
+                className="w-full group"
               >
-                {option.action}
+                <Send className="mr-2 h-5 w-5" />
+                Enviar mensagem via WhatsApp
+                <MessageCircle className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+              </Button>
+            </form>
+          </Card>
+
+          {/* Contact Info */}
+          <div className="space-y-8">
+            <Card className="p-8 bg-gradient-hero text-white">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="p-4 rounded-full bg-white/20">
+                  <MessageCircle className="h-8 w-8 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold">WhatsApp</h3>
+                  <p className="text-white/90">Resposta rápida e personalizada</p>
+                </div>
+              </div>
+              
+              <p className="text-white/90 mb-6">
+                Prefere falar diretamente? Clique no botão abaixo e vamos 
+                conversar sobre seus objetivos via WhatsApp.
+              </p>
+              
+              <Button 
+                variant="gold"
+                size="lg"
+                onClick={handleWhatsAppClick}
+                className="w-full group"
+              >
+                <Phone className="mr-2 h-5 w-5" />
+                +55 11 99999-9999
+                <MessageCircle className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
               </Button>
             </Card>
-          ))}
-        </div>
 
-        {/* Main CTA */}
-        <div className="text-center mb-16">
-          <Card className="p-8 bg-gradient-subtle border-2 border-primary/20 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-primary mb-4">
-              🎯 Pronto para conquistar sua nacionalidade espanhola?
-            </h3>
-            <p className="text-muted-foreground text-lg mb-6">
-              Não deixe o tempo passar! Quanto antes você começar sua preparação, 
-              mais rápido estará com seu diploma DELE A2 em mãos.
-            </p>
-            <Button 
-              variant="hero"
-              size="xl"
-              onClick={handleWhatsAppClick}
-              className="group"
-            >
-              <MessageCircle className="mr-2 h-6 w-6" />
-              Fale comigo agora
-              <Phone className="ml-2 h-6 w-6 group-hover:rotate-12 transition-transform" />
-            </Button>
-          </Card>
-        </div>
-
-        {/* Additional Info */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <Card className="p-6 bg-card/80 backdrop-blur">
-            <div className="flex items-center gap-3 mb-4">
-              <Clock className="h-6 w-6 text-secondary-dark" />
-              <h4 className="font-semibold">Horários Flexíveis</h4>
-            </div>
-            <p className="text-muted-foreground text-sm">
-              Atendimento adaptado ao seu fuso horário. Aulas de manhã, tarde ou noite, 
-              conforme sua disponibilidade.
-            </p>
-          </Card>
-
-          <Card className="p-6 bg-card/80 backdrop-blur">
-            <div className="flex items-center gap-3 mb-4">
-              <MapPin className="h-6 w-6 text-primary" />
-              <h4 className="font-semibold">Atendimento Global</h4>
-            </div>
-            <p className="text-muted-foreground text-sm">
-              Seja onde você estiver no mundo, posso te ajudar. Experiência com 
-              brasileiros em diversos países.
-            </p>
-          </Card>
+            <Card className="p-6 bg-card/80 backdrop-blur">
+              <h4 className="font-semibold mb-4 text-primary">
+                🎯 Pronto para conquistar sua nacionalidade espanhola?
+              </h4>
+              <p className="text-muted-foreground text-sm">
+                Não deixe o tempo passar! Quanto antes você começar sua preparação, 
+                mais rápido estará com seu diploma DELE A2 em mãos.
+              </p>
+            </Card>
+          </div>
         </div>
       </div>
 
