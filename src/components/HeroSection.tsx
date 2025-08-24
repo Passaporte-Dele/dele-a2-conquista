@@ -45,15 +45,16 @@ const HeroSection = () => {
               variant="hero"
               size="xl"
               onClick={handleWhatsAppClick}
-              className="group"
+              className="group text-center"
             >
               <Phone className="mr-2 h-5 w-5" />
-              Fale comigo e garanta sua preparação
+              <span className="hidden sm:inline">Fale comigo e garanta sua preparação</span>
+              <span className="sm:hidden">Quero começar agora!</span>
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
           
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center">
             <div className="p-4">
               <div className="text-3xl font-bold text-secondary mb-2">A2</div>
               <div className="text-sm opacity-80">Nível necessário para nacionalidade</div>

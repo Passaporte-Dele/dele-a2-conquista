@@ -33,7 +33,7 @@ const AboutSection = () => {
               <img 
                 src={teacherImage}
                 alt="Stephanie - Professora de preparação DELE A2"
-                className="rounded-2xl shadow-soft w-full max-w-md mx-auto lg:mx-0"
+                className="rounded-2xl shadow-soft w-full max-w-md mx-auto lg:mx-0 grayscale"
               />
             </div>
             
@@ -80,7 +80,8 @@ const AboutSection = () => {
 
             <div className="text-center">
               <CtaButton>
-                Quero conquistar minha nacionalidade! 🇪🇸
+                <span className="hidden sm:inline">Quero conquistar minha nacionalidade!</span>
+                <span className="sm:hidden">Começar agora!</span>
               </CtaButton>
             </div>
           </div>

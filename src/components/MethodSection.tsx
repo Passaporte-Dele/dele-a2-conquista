@@ -40,7 +40,7 @@ const MethodSection = () => {
 
   return (
     <section id="method" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 max-w-full overflow-hidden">
         <div className="text-center mb-16 fade-in">
           <div className="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full mb-6">
             <Target className="h-5 w-5 text-secondary-dark" />
@@ -74,7 +74,7 @@ const MethodSection = () => {
         </div>
 
         {/* Benefits Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center">
           <div className="fade-in">
             <h3 className="text-2xl font-bold mb-6 text-primary">
               Por que escolher o Passporte DELE?
@@ -90,25 +90,26 @@ const MethodSection = () => {
           </div>
 
           <div className="fade-in">
-            <Card className="p-8 bg-gradient-gold text-center ">
+            <Card className="p-4 sm:p-8 bg-gradient-gold text-center max-w-full">
             <div className="bg-white/80 pt-4 pb-1 rounded-lg">
               <Star className="h-12 w-fit text-primary mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-4 text-primary">
+              <h3 className="text-xl sm:text-2xl font-bold mb-4 text-primary">
                 Garantia de Qualidade
               </h3>
             </div>
 
-              <p className="text-muted-foreground my-6">
-                Mais de 11 anos de experiência vivenciando a lingua na Espanha me permitiram 
+              <p className="text-muted-foreground my-6 text-sm sm:text-base">
+                Mais de 11 anos de experiência na Espanha me permitiram 
                 desenvolver uma <strong className="text-primary">metodologia única</strong>.  
               </p>
-              <p className="text-muted-foreground mb-6">
-                Foco especificamente nas 
-                necessidades de <strong className="text-primary">brasileiros</strong>, que independentemente da 
-                idade ou contato prévio com a lingua buscam a tão sonhada
-                <strong className="text-primary"> nacionalidade espanhola</strong>.
+              <p className="text-muted-foreground mb-6 text-sm sm:text-base">
+                Foco nas necessidades de <strong className="text-primary">brasileiros</strong>, que independentemente da 
+                idade buscam a <strong className="text-primary">nacionalidade espanhola</strong>.
               </p>
-                <CtaButton>Clique aqui para ir do zero ao A2</CtaButton>
+                <CtaButton>
+                  <span className="hidden sm:inline">Clique aqui para ir do zero ao A2</span>
+                  <span className="sm:hidden">Começar do zero!</span>
+                </CtaButton>
               
             </Card>
           </div>
@@ -119,7 +120,7 @@ const MethodSection = () => {
           <h3 className="text-2xl font-bold text-center mb-12 spanish-accent">
             Como funciona o processo
           </h3>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
             <div className="text-center">
               <div className="bg-primary/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-primary">1</span>

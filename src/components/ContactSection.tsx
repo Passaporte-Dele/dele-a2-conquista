@@ -69,7 +69,7 @@ const ContactSection = () => {
                   onChange={handleInputChange}
                   placeholder="Digite seu nome completo"
                   required
-                  className="w-full"
+                  className="w-full max-w-full"
                 />
               </div>
 
@@ -85,7 +85,7 @@ const ContactSection = () => {
                   onChange={handleInputChange}
                   placeholder="seu@email.com"
                   required
-                  className="w-full"
+                  className="w-full max-w-full"
                 />
               </div>
 
@@ -98,10 +98,10 @@ const ContactSection = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
-                  placeholder="Conte-me sobre seus objetivos com o DELE A2, seu nível atual de espanhol e quando pretende fazer a prova..."
+                  placeholder="Conte-me sobre seus objetivos com o DELE A2..."
                   rows={4}
                   required
-                  className="w-full resize-none"
+                  className="w-full max-w-full resize-none"
                 />
               </div>
 
