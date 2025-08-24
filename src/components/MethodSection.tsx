@@ -92,7 +92,7 @@ const MethodSection = () => {
           <div className="fade-in">
             <Card className="p-8 bg-gradient-gold text-center ">
             <div className="bg-white/80 pt-4 pb-1 rounded-lg">
-              <Star className="h-12 w-12 text-primary mx-auto mb-4" />
+              <Star className="h-12 w-fit text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-4 text-primary">
                 Garantia de Qualidade
               </h3>
