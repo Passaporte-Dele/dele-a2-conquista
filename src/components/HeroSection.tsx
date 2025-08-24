@@ -1,19 +1,29 @@
+import heroImageDesktop from "@/assets/hero-background-2.png";
+import heroImageMobile from "@/assets/hero-background.png";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Phone } from "lucide-react";
-import heroImage from "@/assets/hero-spain.jpg";
 
 const HeroSection = () => {
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá! Gostaria de saber mais sobre a preparação para o DELE A2 e como conquistar minha nacionalidade espanhola.");
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5562999211504?text=${message}`, '_blank');
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 lg:pt-20">
+      {/* Background Images with Overlay - Responsive */}
+      {/* Desktop Background */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block"
+        style={{ backgroundImage: `url(${heroImageDesktop})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-primary/40"></div>
+      </div>
+      
+      {/* Mobile Background */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat block md:hidden"
+        style={{ backgroundImage: `url(${heroImageMobile})` }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-primary/40"></div>
       </div>
@@ -26,7 +36,8 @@ const HeroSection = () => {
           </h1>
           
           <h2 className="text-xl md:text-2xl mb-8 font-light opacity-90 max-w-3xl mx-auto">
-            Preparação online personalizada para brasileiros que vivem no exterior
+            Aulas desenvolvidas para qualquer pessoa, de qualquer idade com ou sem 
+            conhecimento prévio do idioma
           </h2>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -42,14 +53,18 @@ const HeroSection = () => {
             </Button>
           </div>
           
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div className="p-4">
-              <div className="text-3xl font-bold text-secondary mb-2">11</div>
-              <div className="text-sm opacity-80">Anos vivendo na Espanha</div>
-            </div>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
             <div className="p-4">
               <div className="text-3xl font-bold text-secondary mb-2">A2</div>
               <div className="text-sm opacity-80">Nível necessário para nacionalidade</div>
+            </div>
+            <div className="p-4">
+              <div className="text-3xl font-bold text-secondary mb-2">+10.000</div>
+              <div className="text-sm opacity-80">Alunos me escolheram como professora</div>
+            </div>
+            <div className="p-4">
+              <div className="text-3xl font-bold text-secondary mb-2">+10</div>
+              <div className="text-sm opacity-80">Anos de experiência lecionando</div>
             </div>
             <div className="p-4">
               <div className="text-3xl font-bold text-secondary mb-2">100%</div>

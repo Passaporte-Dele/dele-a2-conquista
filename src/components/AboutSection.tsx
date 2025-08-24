@@ -1,43 +1,49 @@
+import teacherImage from "@/assets/teacher-profile.png";
+import CtaButton from "@/components/CtaButton";
 import { Card } from "@/components/ui/card";
-import { CheckCircle, Award, Globe, Users } from "lucide-react";
-import teacherImage from "@/assets/teacher-profile.jpg";
+import { Award, Globe, GraduationCap, Users } from "lucide-react";
 
 const AboutSection = () => {
   const highlights = [
+    {
+      icon: GraduationCap,
+      text: "+10 anos de experiência em ensino de linguagens"
+    },
     {
       icon: Globe,
       text: "11 anos vivendo na Espanha"
     },
     {
-      icon: Award,
-      text: "Certificada no ensino de espanhol"
-    },
-    {
       icon: Users,
-      text: "Especialista em preparação DELE"
+      text: "Mais de mil alunos ao redor do mundo"
     },
     {
-      icon: CheckCircle,
-      text: "Falo espanhol sem sotaque"
+      icon: Award,
+      text: "Metodologia focada em resultados"
     }
   ];
 
   return (
-    <section className="py-20 section-gradient">
+    <section id="about" className="py-20 section-gradient">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image */}
-          <div className="order-2 lg:order-1 fade-in">
-            <div className="relative">
+          <div className="flex flex-col order-2 lg:order-1 fade-in items-center">
+            <div className="relative mb-8">
               <img 
                 src={teacherImage}
                 alt="Stephanie - Professora de preparação DELE A2"
                 className="rounded-2xl shadow-soft w-full max-w-md mx-auto lg:mx-0"
               />
-              <div className="absolute -bottom-6 -right-6 bg-secondary text-secondary-foreground p-4 rounded-xl shadow-gold font-semibold">
-                <span className="text-2xl">🇪🇸</span>
-                <div className="text-sm mt-1">Experiência Real</div>
-              </div>
+            </div>
+            
+            {/* Citação abaixo da foto */}
+            <div className="bg-accent/50 p-6 rounded-xl border-l-4 border-primary">
+              <i className="text-foreground font-medium">
+                "Meu objetivo é que você conquiste sua nacionalidade espanhola com confiança e segurança, 
+                dominando não apenas o idioma, mas também a estratégia do exame."
+              </i>
+              <p className="mt-2">- Stephanie Fiori</p>
             </div>
           </div>
 
@@ -48,15 +54,15 @@ const AboutSection = () => {
             </h2>
             
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Olá! Sou Stephanie, professora especializada em preparação para o DELE A2. 
+              Olá! Sou Stephanie Fiori, professora especializada em preparação para o DELE A2. 
               <strong className="text-foreground"> Morei 11 anos na Espanha</strong>, onde 
-              desenvolvi fluência completa no idioma e conhecimento profundo da cultura espanhola.
+              fui alfabetizada e como nativa e desenvolvi fluência completa no idioma e conhecimento profundo da cultura espanhola.
             </p>
             
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Conheço o exame DELE de perto e sei exatamente o que você precisa para ser aprovado. 
               Minha metodologia é focada em <strong className="text-foreground">resultados práticos</strong> 
-              e adaptada especialmente para brasileiros que vivem no exterior.
+              {' '}e adaptada especialmente para <strong className="text-foreground">brasileiros que vivem no exterior</strong>.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
@@ -72,11 +78,10 @@ const AboutSection = () => {
               ))}
             </div>
 
-            <div className="bg-accent/50 p-6 rounded-xl border-l-4 border-primary">
-              <p className="text-foreground font-medium">
-                "Meu objetivo é que você conquiste sua nacionalidade espanhola com confiança e segurança, 
-                dominando não apenas o idioma, mas também a estratégia do exame."
-              </p>
+            <div className="text-center">
+              <CtaButton>
+                Quero conquistar minha nacionalidade! 🇪🇸
+              </CtaButton>
             </div>
           </div>
         </div>

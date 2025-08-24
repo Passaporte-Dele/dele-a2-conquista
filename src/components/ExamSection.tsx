@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
-import { BookOpen, Headphones, MessageCircle, PenTool, Target, Award } from "lucide-react";
+import { BookOpen, Headphones, MessageCircle, PenTool } from "lucide-react";
+import CtaButton from "./CtaButton";
 
 const ExamSection = () => {
   const examSkills = [
@@ -30,7 +31,7 @@ const ExamSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-warm">
+    <section id="exam" className="py-20 bg-gradient-warm">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 fade-in">
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
@@ -39,13 +40,13 @@ const ExamSection = () => {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-6 spanish-accent">
-            O que é o DELE A2 e por que ele é essencial?
+            O que é o DELE?
           </h2>
           
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
-            O DELE (Diploma de Español como Lengua Extranjera) é o diploma oficial de espanhol 
-            reconhecido internacionalmente. Para a nacionalidade espanhola, o nível A2 é 
-            <strong className="text-foreground"> obrigatório e indispensável</strong>.
+            O DELE (Diploma de Español como Lengua Extranjera) é o teste oficial de espanhol 
+            reconhecido internacionalmente. Para a nacionalidade espanhola, deve-se obter no mínimo o nível A2 é 
+            <strong className="text-foreground"> obrigatório e indispensável</strong>. Esta prova avalia as seguintes competências:
           </p>
         </div>
 
@@ -62,44 +63,25 @@ const ExamSection = () => {
           ))}
         </div>
 
-        {/* Key Points */}
-        <div className="grid lg:grid-cols-3 gap-8">
-          <Card className="p-8 text-center gold-hover">
-            <Award className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-3">Diploma Oficial</h3>
-            <p className="text-muted-foreground">
-              Reconhecido pelo Ministério da Educação da Espanha e aceito em todo o mundo
-            </p>
-          </Card>
+        <div className="text-center mb-16 fade-in">
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">
 
-          <Card className="p-8 text-center gold-hover">
-            <Target className="h-12 w-12 text-secondary-dark mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-3">Nível A2 Essencial</h3>
-            <p className="text-muted-foreground">
-              Requisito obrigatório para solicitar a nacionalidade espanhola
-            </p>
-          </Card>
-
-          <Card className="p-8 text-center gold-hover">
-            <MessageCircle className="h-12 w-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-3">Comunicação Real</h3>
-            <p className="text-muted-foreground">
-              Capacidade de se comunicar em situações cotidianas na Espanha
-            </p>
-          </Card>
+          </h3>
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12 fade-in">
-          <div className="bg-primary/5 p-8 rounded-2xl border border-primary/20 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-primary mb-4">
-              👉 Minha preparação ensina exatamente o que você precisa para ser aprovado
-            </h3>
-            <p className="text-muted-foreground text-lg">
-              Com metodologia comprovada e experiência real na Espanha, 
-              você estará preparado para todas as partes do exame.
-            </p>
-          </div>
+        <div className="text-center mb-16 fade-in">          
+          <h3 className="text-xl md:text-2xl font-bold mb-6 ">
+          Minha preparação é focada para alunos brasileiros de qualquer idade
+          </h3>
+          
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
+            Com metodologia comprovada e experiência real na Espanha, 
+            você estará <strong className="text-foreground">preparado para todas as partes do exame</strong>.
+          </p>
+
+          <CtaButton>
+            Fale comigo e garanta sua preparação
+          </CtaButton>
         </div>
       </div>
     </section>

@@ -1,45 +1,45 @@
 import { Card } from "@/components/ui/card";
-import { Monitor, BookText, Mic, Clock, Users, Target, CheckCircle, Star } from "lucide-react";
+import { BookText, CheckCircle, Clock, Mic, Monitor, Star, Target } from "lucide-react";
+import CtaButton from "./CtaButton";
 
 const MethodSection = () => {
   const methodFeatures = [
     {
       icon: Monitor,
       title: "100% Online",
-      description: "Estude de onde estiver no mundo",
+      description: "Estude de onde estiver no mundo.",
       highlight: "Flexibilidade total"
     },
     {
       icon: BookText,
       title: "Material Exclusivo",
-      description: "Adaptado especificamente ao nível A2",
+      description: "Adaptado especificamente ao nível A2.",
       highlight: "Conteúdo direcionado"
     },
     {
       icon: Mic,
       title: "Treinos e Simulações",
-      description: "Prática intensiva da prova oral e escrita",
+      description: "Prática intensiva da prova oral e escrita.",
       highlight: "Preparação real"
     },
     {
       icon: Clock,
-      title: "Horários Flexíveis",
-      description: "De acordo com sua rotina e fuso horário",
+      title: "Aulas Síncronas",
+      description: "Alinhamos o melhor horário para você.",
       highlight: "Sua agenda"
     }
   ];
 
   const benefits = [
-    "Metodologia comprovada com resultados reais",
-    "Professora com experiência de 11 anos na Espanha", 
-    "Material didático atualizado com o formato atual do exame",
-    "Acompanhamento individual durante todo o processo",
-    "Simulados completos para medir seu progresso",
-    "Dicas exclusivas para cada parte do exame"
+    "Metodologia comprovada com resultados reais;",
+    "Não precisa de conhecimento prévio do idioma;", 
+    "Material didático atualizado com o formato do exame;",
+    "Aulas personalizadas de acordo com as suas necessidades;",
+    "Atividades complementares para medir o seu progresso."
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section id="method" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 fade-in">
           <div className="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full mb-6">
@@ -48,7 +48,7 @@ const MethodSection = () => {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-6 spanish-accent">
-            🎯 Preparação prática, sem enrolação
+            Preparação prática, sem enrolação
           </h2>
           
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -77,7 +77,7 @@ const MethodSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="fade-in">
             <h3 className="text-2xl font-bold mb-6 text-primary">
-              Por que escolher minha preparação?
+              Por que escolher o Passporte DELE?
             </h3>
             <div className="space-y-4">
               {benefits.map((benefit, index) => (
@@ -90,22 +90,26 @@ const MethodSection = () => {
           </div>
 
           <div className="fade-in">
-            <Card className="p-8 bg-gradient-gold text-center">
+            <Card className="p-8 bg-gradient-gold text-center ">
+            <div className="bg-white/80 pt-4 pb-1 rounded-lg">
               <Star className="h-12 w-12 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold mb-4 text-primary">
                 Garantia de Qualidade
               </h3>
-              <p className="text-muted-foreground mb-6">
-                Mais de 11 anos de experiência vivendo na Espanha me permitiram 
-                desenvolver uma metodologia única, focada especificamente nas 
-                necessidades de brasileiros que buscam a nacionalidade espanhola.
+            </div>
+
+              <p className="text-muted-foreground my-6">
+                Mais de 11 anos de experiência vivenciando a lingua na Espanha me permitiram 
+                desenvolver uma <strong className="text-primary">metodologia única</strong>.  
               </p>
-              <div className="bg-white/80 p-4 rounded-lg">
-                <div className="text-3xl font-bold text-primary mb-1">A2</div>
-                <div className="text-sm text-muted-foreground">
-                  Nível garantido para sua nacionalidade
-                </div>
-              </div>
+              <p className="text-muted-foreground mb-6">
+                Foco especificamente nas 
+                necessidades de <strong className="text-primary">brasileiros</strong>, que independentemente da 
+                idade ou contato prévio com a lingua buscam a tão sonhada
+                <strong className="text-primary"> nacionalidade espanhola</strong>.
+              </p>
+                <CtaButton>Clique aqui para ir do zero ao A2</CtaButton>
+              
             </Card>
           </div>
         </div>
@@ -122,7 +126,7 @@ const MethodSection = () => {
               </div>
               <h4 className="font-semibold mb-2">Avaliação Inicial</h4>
               <p className="text-sm text-muted-foreground">
-                Conversamos para entender seu nível atual e objetivos específicos
+                Conversamos para entender te conhecer e avaliar o seu nível atual
               </p>
             </div>
             <div className="text-center">
@@ -131,7 +135,10 @@ const MethodSection = () => {
               </div>
               <h4 className="font-semibold mb-2">Plano Personalizado</h4>
               <p className="text-sm text-muted-foreground">
-                Monto um cronograma de estudos adaptado à sua rotina e necessidades
+                Monto um cronograma de estudos adaptado à sua rotina e necessidades. 
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Determinamos os melhores horarios para você.
               </p>
             </div>
             <div className="text-center">
@@ -145,6 +152,9 @@ const MethodSection = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div className="text-center mt-10">
+      <CtaButton >Agendar avaliação inicial</CtaButton>
       </div>
     </section>
   );

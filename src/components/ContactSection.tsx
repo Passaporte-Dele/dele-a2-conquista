@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { MessageCircle, Phone, Send, User, Mail } from "lucide-react";
+import { Mail, MessageCircle, Phone, Send, User } from "lucide-react";
 import { useState } from "react";
 
 const ContactSection = () => {
@@ -14,13 +14,13 @@ const ContactSection = () => {
 
   const handleWhatsAppClick = () => {
     const message = encodeURIComponent("Olá Stephanie! Gostaria de começar minha preparação para o DELE A2 e conquistar minha nacionalidade espanhola. Quando podemos conversar?");
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5562999211504?text=${message}`, '_blank');
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = encodeURIComponent(`Olá Stephanie! Meu nome é ${formData.name}. Email: ${formData.email}. Mensagem: ${formData.message}`);
-    window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+    window.open(`https://wa.me/5562999211504?text=${message}`, '_blank');
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -31,7 +31,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="py-20 bg-primary/5">
+    <section id="contact" className="py-20 bg-primary/5">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 fade-in">
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
@@ -40,7 +40,7 @@ const ContactSection = () => {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-6 spanish-accent">
-            📲 Entre em contato agora mesmo
+            Entre em contato agora mesmo
           </h2>
           
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
@@ -112,9 +112,8 @@ const ContactSection = () => {
                 className="w-full group"
               >
                 <Send className="mr-2 h-5 w-5" />
-                Enviar mensagem via WhatsApp
-                <MessageCircle className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              </Button>
+                  Entrar em contato
+               </Button>
             </form>
           </Card>
 
@@ -142,20 +141,9 @@ const ContactSection = () => {
                 onClick={handleWhatsAppClick}
                 className="w-full group"
               >
-                <Phone className="mr-2 h-5 w-5" />
-                +55 11 99999-9999
                 <MessageCircle className="ml-2 h-5 w-5 group-hover:scale-110 transition-transform" />
+                +55 62 99921-1504
               </Button>
-            </Card>
-
-            <Card className="p-6 bg-card/80 backdrop-blur">
-              <h4 className="font-semibold mb-4 text-primary">
-                🎯 Pronto para conquistar sua nacionalidade espanhola?
-              </h4>
-              <p className="text-muted-foreground text-sm">
-                Não deixe o tempo passar! Quanto antes você começar sua preparação, 
-                mais rápido estará com seu diploma DELE A2 em mãos.
-              </p>
             </Card>
           </div>
         </div>
@@ -165,10 +153,10 @@ const ContactSection = () => {
       <footer className="mt-20 pt-8 border-t border-border/50">
         <div className="container mx-auto px-4 text-center">
           <p className="text-muted-foreground text-sm mb-4">
-            © 2024 Stephanie - Preparação DELE A2. Todos os direitos reservados.
+            © {new Date().getFullYear()} Passaporte DELE - Preparação DELE A2. Todos os direitos reservados.
           </p>
           <p className="text-xs text-muted-foreground">
-            Especialista em preparação para o DELE A2 • 11 anos de experiência na Espanha • 
+            Especialista em preparação para o DELE A2 • Mais de 10 anos de experiência lecionando • 
             Foco na nacionalidade espanhola para brasileiros
           </p>
         </div>

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { MessageCircle, Target, CheckCircle, ArrowRight, Clock, Zap, Star, Crown } from "lucide-react";
+import { CheckCircle, Clock, Crown, MessageCircle, Target, Zap } from "lucide-react";
 
 const PlansSection = () => {
   const handleWhatsAppClick = (planType: string) => {
@@ -21,19 +21,19 @@ const PlansSection = () => {
       highlight: false,
       badge: ""
     },
-    {
-      name: "Intermediário",
-      price: "€249", 
-      icon: Star,
-      features: [
-        "12 aulas ao vivo",
-        "Feedback de tarefas (até 2/semana)",
-        "Dúvidas assíncronas",
-        "Mentoria 50 min opcional (€49)"
-      ],
-      highlight: false,
-      badge: ""
-    },
+    // {
+    //   name: "Intermediário",
+    //   price: "€249", 
+    //   icon: Star,
+    //   features: [
+    //     "12 aulas ao vivo",
+    //     "Feedback de tarefas (até 2/semana)",
+    //     "Dúvidas assíncronas",
+    //     "Mentoria 50 min opcional (€49)"
+    //   ],
+    //   highlight: false,
+    //   badge: ""
+    // },
     {
       name: "Premium",
       price: "€329",
@@ -65,7 +65,7 @@ const PlansSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-warm">
+    <section id="plans" className="py-20 bg-gradient-warm">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 fade-in">
           <div className="inline-flex items-center gap-2 bg-secondary/10 px-4 py-2 rounded-full mb-6">
@@ -74,7 +74,7 @@ const PlansSection = () => {
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-6 spanish-accent">
-            📌 Planos de Preparação DELE A2
+            Planos de Preparação DELE A2
           </h2>
           
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
@@ -83,7 +83,7 @@ const PlansSection = () => {
         </div>
 
         {/* Plans Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
             <Card 
               key={index} 
@@ -162,14 +162,14 @@ const PlansSection = () => {
               Feedback de Tarefas
             </h3>
             <p className="text-muted-foreground text-sm mb-4">
-              Disponível nos planos Intermediário, Premium e Express
+              Disponível nos planos Premium e Express
             </p>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>• Correção detalhada de escrita e leitura/escuta</li>
               <li>• Marcações, exemplos de reescrita e nota-resumo</li>
               <li>• Dúvidas assíncronas sobre a tarefa corrigida</li>
               <li>• Até 2 tarefas/semana (Escrita: 250 palavras; Leitura/escuta: 1 ficha A2)</li>
-              <li>• Retorno em até 48h úteis</li>
+              <li>• Retorno em até 48h úteis (via e-mail ou WhatsApp)</li>
             </ul>
           </Card>
 
@@ -188,9 +188,8 @@ const PlansSection = () => {
             </ul>
           </Card>
         </div>
-
         {/* Payment Info */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <Card className="p-6 bg-primary/5 border border-primary/20 max-w-4xl mx-auto">
             <h4 className="text-xl font-semibold mb-4 text-primary">
               💳 Pagamento
@@ -199,7 +198,7 @@ const PlansSection = () => {
               Pagamento antecipado, 100% seguro via cartão de crédito.
             </p>
           </Card>
-        </div>
+        </div> */}
       </div>
     </section>
   );
