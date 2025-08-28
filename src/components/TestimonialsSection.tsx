@@ -1,30 +1,9 @@
 import { Card } from "@/components/ui/card";
+import { testimonials } from "@/messages/testemonials";
 import { CheckCircle, Quote, Star } from "lucide-react";
 
 const TestimonialsSection = () => {
-  const testimonials = [
-    {
-      name: "Elizabeth Freitas, 55 anos",
-      location: "Dublin - Irlanda",
-      content: "Você acredita que passei? Desculpa qualquer coisa e muito obrigado pelo que você me ensinou ficou gravado na minha mente da primeira vez que fiz a prova estava muito nervosa a segunda já fui mais calma e graças a Deus consegui. Ah, a Juliana também passou! Que Deus continue te abençoando e te dando paciência com umas pessoas iguais a mim kkkkkkk bjs ótima semana 🥰🥰",
-      rating: 5,
-      status: "Aprovada no DELE A2"
-    },
-    {
-      name: "João Camargo, 26 anos", 
-      location: "São Paulo - Brasil",
-      content: "Escrevo para agradecer imensamente pelas aulas de espanhol. Elas foram excelentes e consegui melhorar muito, tanto na pronúncia quanto na gramática. Seu trabalho foi fundamental para que eu também aprendesse sobre a cultura espanhola e a vida na Europa. Agradeço sua dedicação e a forma como conduziu as aulas.",
-      rating: 5,
-      status: "Aprovado no DELE A2"
-    },
-    {
-      name: "Dunya Graciana, 33 anos",
-      location: "Marbella - Espanha", 
-      content: "Queria muito agradecer pela sua paciência e por ser tão acolhedora. Confesso que tenho um pouco de dificuldade para aprender, mas você me deixou tão à vontade que não tive receio de perguntar nada. O processo foi super tranquilo e leve. Fico muito feliz em dizer que, com a sua ajuda, consegui alcançar exatamente o resultado que eu precisava. A forma como você ensina realmente fez a diferença.",
-      rating: 5,
-      status: "Aprovada no DELE A2"
-    }
-  ];
+  
 
   return (
     <section id="testimonials" className="py-20 section-gradient">
